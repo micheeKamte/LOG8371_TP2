@@ -1,0 +1,1660 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jmeterTestPlan version="1.2" properties="5.0" jmeter="5.1.1 r1855137">
+  <hashTree>
+    <TestPlan guiclass="TestPlanGui" testclass="TestPlan" testname="Plan de test" enabled="true">
+      <stringProp name="TestPlan.comments">Différent</stringProp>
+      <boolProp name="TestPlan.functional_mode">false</boolProp>
+      <boolProp name="TestPlan.tearDown_on_shutdown">true</boolProp>
+      <boolProp name="TestPlan.serialize_threadgroups">false</boolProp>
+      <elementProp name="TestPlan.user_defined_variables" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+        <collectionProp name="Arguments.arguments">
+          <elementProp name="ip" elementType="Argument">
+            <stringProp name="Argument.name">ip</stringProp>
+            <stringProp name="Argument.value">127.0.0.1</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="port" elementType="Argument">
+            <stringProp name="Argument.name">port</stringProp>
+            <stringProp name="Argument.value">8080</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="dataset_path" elementType="Argument">
+            <stringProp name="Argument.name">dataset_path</stringProp>
+            <stringProp name="Argument.value">C:\Users\Michael\Desktop\École\H2019\LOG8371\LOG8371-tp2\data</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+        </collectionProp>
+      </elementProp>
+      <stringProp name="TestPlan.user_define_classpath"></stringProp>
+    </TestPlan>
+    <hashTree>
+      <ConfigTestElement guiclass="HttpDefaultsGui" testclass="ConfigTestElement" testname="HTTP Request Defaults" enabled="true">
+        <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+          <collectionProp name="Arguments.arguments"/>
+        </elementProp>
+        <stringProp name="HTTPSampler.domain">192.168.99.100</stringProp>
+        <stringProp name="HTTPSampler.port">80</stringProp>
+        <stringProp name="HTTPSampler.protocol"></stringProp>
+        <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+        <stringProp name="HTTPSampler.path"></stringProp>
+        <stringProp name="HTTPSampler.concurrentPool">6</stringProp>
+        <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+        <stringProp name="HTTPSampler.response_timeout"></stringProp>
+      </ConfigTestElement>
+      <hashTree/>
+      <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+        <collectionProp name="HeaderManager.headers">
+          <elementProp name="Accept-Language" elementType="Header">
+            <stringProp name="Header.name">Accept-Language</stringProp>
+            <stringProp name="Header.value">fr-fr</stringProp>
+          </elementProp>
+          <elementProp name="Accept" elementType="Header">
+            <stringProp name="Header.name">Accept</stringProp>
+            <stringProp name="Header.value">text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8</stringProp>
+          </elementProp>
+          <elementProp name="User-Agent" elementType="Header">
+            <stringProp name="Header.name">User-Agent</stringProp>
+            <stringProp name="Header.value">Mozilla/5.0 (Macintosh; Intel Mac OS X 10.6; rv:8.0.1) Gecko/20100101 Firefox/8.0.1</stringProp>
+          </elementProp>
+          <elementProp name="Referer" elementType="Header">
+            <stringProp name="Header.name">Referer</stringProp>
+            <stringProp name="Header.value">http://localhost:8080/examples/servlets/index.html</stringProp>
+          </elementProp>
+          <elementProp name="DNT" elementType="Header">
+            <stringProp name="Header.name">DNT</stringProp>
+            <stringProp name="Header.value">1</stringProp>
+          </elementProp>
+          <elementProp name="Accept-Encoding" elementType="Header">
+            <stringProp name="Header.name">Accept-Encoding</stringProp>
+            <stringProp name="Header.value">gzip, deflate</stringProp>
+          </elementProp>
+          <elementProp name="Accept-Charset" elementType="Header">
+            <stringProp name="Header.name">Accept-Charset</stringProp>
+            <stringProp name="Header.value">ISO-8859-1,utf-8;q=0.7,*;q=0.7</stringProp>
+          </elementProp>
+        </collectionProp>
+      </HeaderManager>
+      <hashTree/>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Charge réduite" enabled="true">
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <stringProp name="LoopController.loops">1</stringProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">2</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">1</stringProp>
+        <boolProp name="ThreadGroup.scheduler">false</boolProp>
+        <stringProp name="ThreadGroup.duration"></stringProp>
+        <stringProp name="ThreadGroup.delay"></stringProp>
+      </ThreadGroup>
+      <hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="decisionStump" enabled="true">
+          <elementProp name="HTTPsampler.Files" elementType="HTTPFileArgs">
+            <collectionProp name="HTTPFileArgs.files">
+              <elementProp name="C:\Users\mkamt\Documents\LOG8371\LOG8371-tp2\data\large_dataset.arff" elementType="HTTPFileArg">
+                <stringProp name="File.path">C:\Users\mkamt\Documents\LOG8371\LOG8371-tp2\data\large_dataset.arff</stringProp>
+                <stringProp name="File.paramname">file</stringProp>
+                <stringProp name="File.mimetype">text/plain</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">Content-Disposition: form-data; name=&quot;batchSize&quot;&#xd;
+&#xd;
+100&#xd;
+&#xd;
+Content-Disposition: form-data; name=&quot;useKernelEstimator&quot;&#xd;
+&#xd;
+0&#xd;
+&#xd;
+Content-Disposition: form-data; name=&quot;useSupervisedDiscretization&quot;&#xd;
+&#xd;
+0&#xd;
+&#xd;
+Content-Disposition: form-data; name=&quot;validation&quot;&#xd;
+&#xd;
+CrossValidation&#xd;
+&#xd;
+Content-Disposition: form-data; name=&quot;validationNum&quot;&#xd;
+&#xd;
+10</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain"></stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">/algorithm/BayesNet</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">true</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree/>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="IBK" enabled="true">
+          <elementProp name="HTTPsampler.Files" elementType="HTTPFileArgs">
+            <collectionProp name="HTTPFileArgs.files">
+              <elementProp name="C:\Users\mkamt\Documents\LOG8371\LOG8371-tp2\data\large_dataset.arff" elementType="HTTPFileArg">
+                <stringProp name="File.path">C:\Users\mkamt\Documents\LOG8371\LOG8371-tp2\data\large_dataset.arff</stringProp>
+                <stringProp name="File.paramname">file</stringProp>
+                <stringProp name="File.mimetype">text/plain</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">Content-Disposition: form-data; name=&quot;windowSize&quot;&#xd;
+0&#xd;
+&#xd;
+Content-Disposition: form-data; name=&quot;KNN&quot;&#xd;
+0&#xd;
+&#xd;
+Content-Disposition: form-data; name=&quot;crossValidate&quot;&#xd;
+0&#xd;
+&#xd;
+Content-Disposition: form-data; name=&quot;distanceWeighting&quot;&#xd;
+0&#xd;
+&#xd;
+Content-Disposition: form-data; name=&quot;meanSquared&quot;&#xd;
+0&#xd;
+&#xd;
+Content-Disposition: form-data; name=&quot;nearestNeighbourSearchAlgorithm&quot;&#xd;
+weka.core.neighboursearch.LinearNNSearch&#xd;
+&#xd;
+Content-Disposition: form-data; name=&quot;validation&quot;&#xd;
+CrossValidation&#xd;
+&#xd;
+Content-Disposition: form-data; name=&quot;validationNum&quot;&#xd;
+10</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain"></stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">/algorithm/IBk</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">true</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree/>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="RandomForest" enabled="true">
+          <elementProp name="HTTPsampler.Files" elementType="HTTPFileArgs">
+            <collectionProp name="HTTPFileArgs.files">
+              <elementProp name="C:\Users\mkamt\Documents\LOG8371\LOG8371-tp2\data\large_dataset.arff" elementType="HTTPFileArg">
+                <stringProp name="File.path">C:\Users\mkamt\Documents\LOG8371\LOG8371-tp2\data\large_dataset.arff</stringProp>
+                <stringProp name="File.paramname">file</stringProp>
+                <stringProp name="File.mimetype">text/plain</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">Content-Disposition: form-data; name=&quot;storeOutOfBagPredictions&quot;&#xd;
+true&#xd;
+&#xd;
+Content-Disposition: form-data; name=&quot;numExecutionSlots&quot;&#xd;
+1&#xd;
+&#xd;
+Content-Disposition: form-data; name=&quot;bagSizePercent&quot;&#xd;
+10&#xd;
+&#xd;
+Content-Disposition: form-data; name=&quot;numDecimalPlaces&quot;&#xd;
+1&#xd;
+&#xd;
+Content-Disposition: form-data; name=&quot;batchSize&quot;&#xd;
+100&#xd;
+&#xd;
+Content-Disposition: form-data; name=&quot;printClassifiers&quot;&#xd;
+true&#xd;
+&#xd;
+Content-Disposition: form-data; name=&quot;numIterations&quot;&#xd;
+10&#xd;
+&#xd;
+Content-Disposition: form-data; name=&quot;outputOutOfBagComplexityStatistics&quot;&#xd;
+true&#xd;
+&#xd;
+Content-Disposition: form-data; name=&quot;breakTiesRandomly&quot;&#xd;
+true&#xd;
+&#xd;
+Content-Disposition: form-data; name=&quot;maxDepth&quot;&#xd;
+0&#xd;
+&#xd;
+Content-Disposition: form-data; name=&quot;computeAttributeImportance&quot;&#xd;
+true&#xd;
+&#xd;
+Content-Disposition: form-data; name=&quot;calcOutOfBag&quot;&#xd;
+true&#xd;
+&#xd;
+Content-Disposition: form-data; name=&quot;numFeatures&quot;&#xd;
+0&#xd;
+&#xd;
+Content-Disposition: form-data; name=&quot;validation&quot;&#xd;
+CrossValidation&#xd;
+&#xd;
+Content-Disposition: form-data; name=&quot;validationNum&quot;&#xd;
+10</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain"></stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">/algorithm/RandomForest</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">true</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree/>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Hierarchical" enabled="false">
+          <elementProp name="HTTPsampler.Files" elementType="HTTPFileArgs">
+            <collectionProp name="HTTPFileArgs.files">
+              <elementProp name="C:\Users\mkamt\Documents\LOG8371\LOG8371-tp2\data\large_dataset.arff" elementType="HTTPFileArg">
+                <stringProp name="File.path">C:\Users\mkamt\Documents\LOG8371\LOG8371-tp2\data\large_dataset.arff</stringProp>
+                <stringProp name="File.paramname">file</stringProp>
+                <stringProp name="File.mimetype">text/plain</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">Content-Disposition: form-data; name=&quot;printNewick&quot;&#xd;
+false&#xd;
+&#xd;
+Content-Disposition: form-data; name=&quot;numClusters&quot;&#xd;
+-1&#xd;
+&#xd;
+Content-Disposition: form-data; name=&quot;linkType&quot;&#xd;
+SINGLE&#xd;
+&#xd;
+Content-Disposition: form-data; name=&quot;distanceIsBranchLength&quot;&#xd;
+true&#xd;
+&#xd;
+Content-Disposition: form-data; name=&quot;distanceFunction&quot;&#xd;
+weka.core.EuclideanDistance</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain"></stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">/cluster/Hierarchical</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">true</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree/>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="SimpleKMeans" enabled="true">
+          <elementProp name="HTTPsampler.Files" elementType="HTTPFileArgs">
+            <collectionProp name="HTTPFileArgs.files">
+              <elementProp name="C:\Users\mkamt\Documents\LOG8371\LOG8371-tp2\data\large_dataset.arff" elementType="HTTPFileArg">
+                <stringProp name="File.path">C:\Users\mkamt\Documents\LOG8371\LOG8371-tp2\data\large_dataset.arff</stringProp>
+                <stringProp name="File.paramname">file</stringProp>
+                <stringProp name="File.mimetype">text/plain</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">Content-Disposition: form-data; name=&quot;canopyMaxNumCanopiesToHoldInMemory&quot;&#xd;
+2&#xd;
+&#xd;
+Content-Disposition: form-data; name=&quot;canopyMinimumCanopyDensity&quot;&#xd;
+1.0&#xd;
+&#xd;
+Content-Disposition: form-data; name=&quot;canopyPeriodicPruningRate&quot;&#xd;
+1.0&#xd;
+&#xd;
+Content-Disposition: form-data; name=&quot;canopyT1&quot;&#xd;
+1.0&#xd;
+&#xd;
+Content-Disposition: form-data; name=&quot;canopyT2&quot;&#xd;
+1.0&#xd;
+&#xd;
+Content-Disposition: form-data; name=&quot;displayStdDevs&quot;&#xd;
+true&#xd;
+&#xd;
+Content-Disposition: form-data; name=&quot;distanceFunction&quot;&#xd;
+weka.core.EuclideanDistance&#xd;
+&#xd;
+Content-Disposition: form-data; name=&quot;dontReplaceMissingValues&quot;&#xd;
+true&#xd;
+&#xd;
+Content-Disposition: form-data; name=&quot;fastDistanceCalc&quot;&#xd;
+true&#xd;
+&#xd;
+Content-Disposition: form-data; name=&quot;initializationMethod&quot;&#xd;
+0&#xd;
+&#xd;
+Content-Disposition: form-data; name=&quot;maxIterations&quot;&#xd;
+10&#xd;
+&#xd;
+Content-Disposition: form-data; name=&quot;numClusters&quot;&#xd;
+2&#xd;
+&#xd;
+Content-Disposition: form-data; name=&quot;numExecutionSlots&quot;&#xd;
+1&#xd;
+&#xd;
+Content-Disposition: form-data; name=&quot;preserveInstancesOrder&quot;&#xd;
+true&#xd;
+&#xd;
+Content-Disposition: form-data; name=&quot;reduceNumberOfDistanceCalcsViaCanopies&quot;&#xd;
+true&#xd;
+&#xd;
+Content-Disposition: form-data; name=&quot;seed&quot;&#xd;
+10</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain"></stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">/cluster/SimpleKMeans</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">true</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree/>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="EM" enabled="true">
+          <elementProp name="HTTPsampler.Files" elementType="HTTPFileArgs">
+            <collectionProp name="HTTPFileArgs.files">
+              <elementProp name="C:\Users\mkamt\Documents\LOG8371\LOG8371-tp2\data\large_dataset.arff" elementType="HTTPFileArg">
+                <stringProp name="File.path">C:\Users\mkamt\Documents\LOG8371\LOG8371-tp2\data\large_dataset.arff</stringProp>
+                <stringProp name="File.paramname">file</stringProp>
+                <stringProp name="File.mimetype">text/plain</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">Content-Disposition: form-data; name=&quot;numFolds&quot;&#xd;
+2&#xd;
+&#xd;
+Content-Disposition: form-data; name=&quot;numKMeansRuns&quot;&#xd;
+10&#xd;
+&#xd;
+Content-Disposition: form-data; name=&quot;maximumNumberOfClusters&quot;&#xd;
+-1&#xd;
+&#xd;
+Content-Disposition: form-data; name=&quot;numClusters&quot;&#xd;
+-1&#xd;
+&#xd;
+Content-Disposition: form-data; name=&quot;maxIterations&quot;&#xd;
+100</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain"></stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">/cluster/EM</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">true</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree/>
+      </hashTree>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Charge moyenne" enabled="false">
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <stringProp name="LoopController.loops">1</stringProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">6</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">1</stringProp>
+        <boolProp name="ThreadGroup.scheduler">false</boolProp>
+        <stringProp name="ThreadGroup.duration"></stringProp>
+        <stringProp name="ThreadGroup.delay"></stringProp>
+      </ThreadGroup>
+      <hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="decisionStump" enabled="true">
+          <elementProp name="HTTPsampler.Files" elementType="HTTPFileArgs">
+            <collectionProp name="HTTPFileArgs.files">
+              <elementProp name="C:\Users\mkamt\Documents\LOG8371\LOG8371-tp2\data\large_dataset.arff" elementType="HTTPFileArg">
+                <stringProp name="File.path">C:\Users\mkamt\Documents\LOG8371\LOG8371-tp2\data\large_dataset.arff</stringProp>
+                <stringProp name="File.paramname">file</stringProp>
+                <stringProp name="File.mimetype">text/plain</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">Content-Disposition: form-data; name=&quot;batchSize&quot;&#xd;
+&#xd;
+100&#xd;
+&#xd;
+Content-Disposition: form-data; name=&quot;useKernelEstimator&quot;&#xd;
+&#xd;
+0&#xd;
+&#xd;
+Content-Disposition: form-data; name=&quot;useSupervisedDiscretization&quot;&#xd;
+&#xd;
+0&#xd;
+&#xd;
+Content-Disposition: form-data; name=&quot;validation&quot;&#xd;
+&#xd;
+CrossValidation&#xd;
+&#xd;
+Content-Disposition: form-data; name=&quot;validationNum&quot;&#xd;
+&#xd;
+10</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain"></stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">/algorithm/BayesNet</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">true</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree/>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="IBK" enabled="true">
+          <elementProp name="HTTPsampler.Files" elementType="HTTPFileArgs">
+            <collectionProp name="HTTPFileArgs.files">
+              <elementProp name="C:\Users\mkamt\Documents\LOG8371\LOG8371-tp2\data\large_dataset.arff" elementType="HTTPFileArg">
+                <stringProp name="File.path">C:\Users\mkamt\Documents\LOG8371\LOG8371-tp2\data\large_dataset.arff</stringProp>
+                <stringProp name="File.paramname">file</stringProp>
+                <stringProp name="File.mimetype">text/plain</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">Content-Disposition: form-data; name=&quot;windowSize&quot;&#xd;
+0&#xd;
+&#xd;
+Content-Disposition: form-data; name=&quot;KNN&quot;&#xd;
+0&#xd;
+&#xd;
+Content-Disposition: form-data; name=&quot;crossValidate&quot;&#xd;
+0&#xd;
+&#xd;
+Content-Disposition: form-data; name=&quot;distanceWeighting&quot;&#xd;
+0&#xd;
+&#xd;
+Content-Disposition: form-data; name=&quot;meanSquared&quot;&#xd;
+0&#xd;
+&#xd;
+Content-Disposition: form-data; name=&quot;nearestNeighbourSearchAlgorithm&quot;&#xd;
+weka.core.neighboursearch.LinearNNSearch&#xd;
+&#xd;
+Content-Disposition: form-data; name=&quot;validation&quot;&#xd;
+CrossValidation&#xd;
+&#xd;
+Content-Disposition: form-data; name=&quot;validationNum&quot;&#xd;
+10</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain"></stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">/algorithm/IBk</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">true</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree/>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="RandomForest" enabled="true">
+          <elementProp name="HTTPsampler.Files" elementType="HTTPFileArgs">
+            <collectionProp name="HTTPFileArgs.files">
+              <elementProp name="C:\Users\mkamt\Documents\LOG8371\LOG8371-tp2\data\large_dataset.arff" elementType="HTTPFileArg">
+                <stringProp name="File.path">C:\Users\mkamt\Documents\LOG8371\LOG8371-tp2\data\large_dataset.arff</stringProp>
+                <stringProp name="File.paramname">file</stringProp>
+                <stringProp name="File.mimetype">text/plain</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">Content-Disposition: form-data; name=&quot;storeOutOfBagPredictions&quot;&#xd;
+true&#xd;
+&#xd;
+Content-Disposition: form-data; name=&quot;numExecutionSlots&quot;&#xd;
+1&#xd;
+&#xd;
+Content-Disposition: form-data; name=&quot;bagSizePercent&quot;&#xd;
+10&#xd;
+&#xd;
+Content-Disposition: form-data; name=&quot;numDecimalPlaces&quot;&#xd;
+1&#xd;
+&#xd;
+Content-Disposition: form-data; name=&quot;batchSize&quot;&#xd;
+100&#xd;
+&#xd;
+Content-Disposition: form-data; name=&quot;printClassifiers&quot;&#xd;
+true&#xd;
+&#xd;
+Content-Disposition: form-data; name=&quot;numIterations&quot;&#xd;
+10&#xd;
+&#xd;
+Content-Disposition: form-data; name=&quot;outputOutOfBagComplexityStatistics&quot;&#xd;
+true&#xd;
+&#xd;
+Content-Disposition: form-data; name=&quot;breakTiesRandomly&quot;&#xd;
+true&#xd;
+&#xd;
+Content-Disposition: form-data; name=&quot;maxDepth&quot;&#xd;
+0&#xd;
+&#xd;
+Content-Disposition: form-data; name=&quot;computeAttributeImportance&quot;&#xd;
+true&#xd;
+&#xd;
+Content-Disposition: form-data; name=&quot;calcOutOfBag&quot;&#xd;
+true&#xd;
+&#xd;
+Content-Disposition: form-data; name=&quot;numFeatures&quot;&#xd;
+0&#xd;
+&#xd;
+Content-Disposition: form-data; name=&quot;validation&quot;&#xd;
+CrossValidation&#xd;
+&#xd;
+Content-Disposition: form-data; name=&quot;validationNum&quot;&#xd;
+10</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain"></stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">/algorithm/RandomForest</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">true</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree/>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Hierarchical" enabled="false">
+          <elementProp name="HTTPsampler.Files" elementType="HTTPFileArgs">
+            <collectionProp name="HTTPFileArgs.files">
+              <elementProp name="C:\Users\mkamt\Documents\LOG8371\LOG8371-tp2\data\large_dataset.arff" elementType="HTTPFileArg">
+                <stringProp name="File.path">C:\Users\mkamt\Documents\LOG8371\LOG8371-tp2\data\large_dataset.arff</stringProp>
+                <stringProp name="File.paramname">file</stringProp>
+                <stringProp name="File.mimetype">text/plain</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">Content-Disposition: form-data; name=&quot;printNewick&quot;&#xd;
+false&#xd;
+&#xd;
+Content-Disposition: form-data; name=&quot;numClusters&quot;&#xd;
+-1&#xd;
+&#xd;
+Content-Disposition: form-data; name=&quot;linkType&quot;&#xd;
+SINGLE&#xd;
+&#xd;
+Content-Disposition: form-data; name=&quot;distanceIsBranchLength&quot;&#xd;
+true&#xd;
+&#xd;
+Content-Disposition: form-data; name=&quot;distanceFunction&quot;&#xd;
+weka.core.EuclideanDistance</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain"></stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">/cluster/Hierarchical</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">true</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree/>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="SimpleKMeans" enabled="true">
+          <elementProp name="HTTPsampler.Files" elementType="HTTPFileArgs">
+            <collectionProp name="HTTPFileArgs.files">
+              <elementProp name="C:\Users\mkamt\Documents\LOG8371\LOG8371-tp2\data\large_dataset.arff" elementType="HTTPFileArg">
+                <stringProp name="File.path">C:\Users\mkamt\Documents\LOG8371\LOG8371-tp2\data\large_dataset.arff</stringProp>
+                <stringProp name="File.paramname">file</stringProp>
+                <stringProp name="File.mimetype">text/plain</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">Content-Disposition: form-data; name=&quot;canopyMaxNumCanopiesToHoldInMemory&quot;&#xd;
+2&#xd;
+&#xd;
+Content-Disposition: form-data; name=&quot;canopyMinimumCanopyDensity&quot;&#xd;
+1.0&#xd;
+&#xd;
+Content-Disposition: form-data; name=&quot;canopyPeriodicPruningRate&quot;&#xd;
+1.0&#xd;
+&#xd;
+Content-Disposition: form-data; name=&quot;canopyT1&quot;&#xd;
+1.0&#xd;
+&#xd;
+Content-Disposition: form-data; name=&quot;canopyT2&quot;&#xd;
+1.0&#xd;
+&#xd;
+Content-Disposition: form-data; name=&quot;displayStdDevs&quot;&#xd;
+true&#xd;
+&#xd;
+Content-Disposition: form-data; name=&quot;distanceFunction&quot;&#xd;
+weka.core.EuclideanDistance&#xd;
+&#xd;
+Content-Disposition: form-data; name=&quot;dontReplaceMissingValues&quot;&#xd;
+true&#xd;
+&#xd;
+Content-Disposition: form-data; name=&quot;fastDistanceCalc&quot;&#xd;
+true&#xd;
+&#xd;
+Content-Disposition: form-data; name=&quot;initializationMethod&quot;&#xd;
+0&#xd;
+&#xd;
+Content-Disposition: form-data; name=&quot;maxIterations&quot;&#xd;
+10&#xd;
+&#xd;
+Content-Disposition: form-data; name=&quot;numClusters&quot;&#xd;
+2&#xd;
+&#xd;
+Content-Disposition: form-data; name=&quot;numExecutionSlots&quot;&#xd;
+1&#xd;
+&#xd;
+Content-Disposition: form-data; name=&quot;preserveInstancesOrder&quot;&#xd;
+true&#xd;
+&#xd;
+Content-Disposition: form-data; name=&quot;reduceNumberOfDistanceCalcsViaCanopies&quot;&#xd;
+true&#xd;
+&#xd;
+Content-Disposition: form-data; name=&quot;seed&quot;&#xd;
+10</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain"></stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">/cluster/SimpleKMeans</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">true</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree/>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="EM" enabled="true">
+          <elementProp name="HTTPsampler.Files" elementType="HTTPFileArgs">
+            <collectionProp name="HTTPFileArgs.files">
+              <elementProp name="C:\Users\mkamt\Documents\LOG8371\LOG8371-tp2\data\large_dataset.arff" elementType="HTTPFileArg">
+                <stringProp name="File.path">C:\Users\mkamt\Documents\LOG8371\LOG8371-tp2\data\large_dataset.arff</stringProp>
+                <stringProp name="File.paramname">file</stringProp>
+                <stringProp name="File.mimetype">text/plain</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">Content-Disposition: form-data; name=&quot;numFolds&quot;&#xd;
+2&#xd;
+&#xd;
+Content-Disposition: form-data; name=&quot;numKMeansRuns&quot;&#xd;
+10&#xd;
+&#xd;
+Content-Disposition: form-data; name=&quot;maximumNumberOfClusters&quot;&#xd;
+-1&#xd;
+&#xd;
+Content-Disposition: form-data; name=&quot;numClusters&quot;&#xd;
+-1&#xd;
+&#xd;
+Content-Disposition: form-data; name=&quot;maxIterations&quot;&#xd;
+100</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain"></stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">/cluster/EM</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">true</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree/>
+      </hashTree>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Charge augmentée" enabled="false">
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <stringProp name="LoopController.loops">1</stringProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">20</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">1</stringProp>
+        <boolProp name="ThreadGroup.scheduler">false</boolProp>
+        <stringProp name="ThreadGroup.duration"></stringProp>
+        <stringProp name="ThreadGroup.delay"></stringProp>
+      </ThreadGroup>
+      <hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="decisionStump" enabled="true">
+          <elementProp name="HTTPsampler.Files" elementType="HTTPFileArgs">
+            <collectionProp name="HTTPFileArgs.files">
+              <elementProp name="C:\Users\mkamt\Documents\LOG8371\LOG8371-tp2\data\large_dataset.arff" elementType="HTTPFileArg">
+                <stringProp name="File.path">C:\Users\mkamt\Documents\LOG8371\LOG8371-tp2\data\large_dataset.arff</stringProp>
+                <stringProp name="File.paramname">file</stringProp>
+                <stringProp name="File.mimetype">text/plain</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">Content-Disposition: form-data; name=&quot;batchSize&quot;&#xd;
+&#xd;
+100&#xd;
+&#xd;
+Content-Disposition: form-data; name=&quot;useKernelEstimator&quot;&#xd;
+&#xd;
+0&#xd;
+&#xd;
+Content-Disposition: form-data; name=&quot;useSupervisedDiscretization&quot;&#xd;
+&#xd;
+0&#xd;
+&#xd;
+Content-Disposition: form-data; name=&quot;validation&quot;&#xd;
+&#xd;
+CrossValidation&#xd;
+&#xd;
+Content-Disposition: form-data; name=&quot;validationNum&quot;&#xd;
+&#xd;
+10</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain"></stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">/algorithm/BayesNet</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">true</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree/>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="IBK" enabled="true">
+          <elementProp name="HTTPsampler.Files" elementType="HTTPFileArgs">
+            <collectionProp name="HTTPFileArgs.files">
+              <elementProp name="C:\Users\mkamt\Documents\LOG8371\LOG8371-tp2\data\large_dataset.arff" elementType="HTTPFileArg">
+                <stringProp name="File.path">C:\Users\mkamt\Documents\LOG8371\LOG8371-tp2\data\large_dataset.arff</stringProp>
+                <stringProp name="File.paramname">file</stringProp>
+                <stringProp name="File.mimetype">text/plain</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">Content-Disposition: form-data; name=&quot;windowSize&quot;&#xd;
+0&#xd;
+&#xd;
+Content-Disposition: form-data; name=&quot;KNN&quot;&#xd;
+0&#xd;
+&#xd;
+Content-Disposition: form-data; name=&quot;crossValidate&quot;&#xd;
+0&#xd;
+&#xd;
+Content-Disposition: form-data; name=&quot;distanceWeighting&quot;&#xd;
+0&#xd;
+&#xd;
+Content-Disposition: form-data; name=&quot;meanSquared&quot;&#xd;
+0&#xd;
+&#xd;
+Content-Disposition: form-data; name=&quot;nearestNeighbourSearchAlgorithm&quot;&#xd;
+weka.core.neighboursearch.LinearNNSearch&#xd;
+&#xd;
+Content-Disposition: form-data; name=&quot;validation&quot;&#xd;
+CrossValidation&#xd;
+&#xd;
+Content-Disposition: form-data; name=&quot;validationNum&quot;&#xd;
+10</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain"></stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">/algorithm/IBk</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">true</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree/>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="RandomForest" enabled="true">
+          <elementProp name="HTTPsampler.Files" elementType="HTTPFileArgs">
+            <collectionProp name="HTTPFileArgs.files">
+              <elementProp name="C:\Users\mkamt\Documents\LOG8371\LOG8371-tp2\data\large_dataset.arff" elementType="HTTPFileArg">
+                <stringProp name="File.path">C:\Users\mkamt\Documents\LOG8371\LOG8371-tp2\data\large_dataset.arff</stringProp>
+                <stringProp name="File.paramname">file</stringProp>
+                <stringProp name="File.mimetype">text/plain</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">Content-Disposition: form-data; name=&quot;storeOutOfBagPredictions&quot;&#xd;
+true&#xd;
+&#xd;
+Content-Disposition: form-data; name=&quot;numExecutionSlots&quot;&#xd;
+1&#xd;
+&#xd;
+Content-Disposition: form-data; name=&quot;bagSizePercent&quot;&#xd;
+10&#xd;
+&#xd;
+Content-Disposition: form-data; name=&quot;numDecimalPlaces&quot;&#xd;
+1&#xd;
+&#xd;
+Content-Disposition: form-data; name=&quot;batchSize&quot;&#xd;
+100&#xd;
+&#xd;
+Content-Disposition: form-data; name=&quot;printClassifiers&quot;&#xd;
+true&#xd;
+&#xd;
+Content-Disposition: form-data; name=&quot;numIterations&quot;&#xd;
+10&#xd;
+&#xd;
+Content-Disposition: form-data; name=&quot;outputOutOfBagComplexityStatistics&quot;&#xd;
+true&#xd;
+&#xd;
+Content-Disposition: form-data; name=&quot;breakTiesRandomly&quot;&#xd;
+true&#xd;
+&#xd;
+Content-Disposition: form-data; name=&quot;maxDepth&quot;&#xd;
+0&#xd;
+&#xd;
+Content-Disposition: form-data; name=&quot;computeAttributeImportance&quot;&#xd;
+true&#xd;
+&#xd;
+Content-Disposition: form-data; name=&quot;calcOutOfBag&quot;&#xd;
+true&#xd;
+&#xd;
+Content-Disposition: form-data; name=&quot;numFeatures&quot;&#xd;
+0&#xd;
+&#xd;
+Content-Disposition: form-data; name=&quot;validation&quot;&#xd;
+CrossValidation&#xd;
+&#xd;
+Content-Disposition: form-data; name=&quot;validationNum&quot;&#xd;
+10</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain"></stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">/algorithm/RandomForest</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">true</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree/>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Hierarchical" enabled="false">
+          <elementProp name="HTTPsampler.Files" elementType="HTTPFileArgs">
+            <collectionProp name="HTTPFileArgs.files">
+              <elementProp name="C:\Users\mkamt\Documents\LOG8371\LOG8371-tp2\data\large_dataset.arff" elementType="HTTPFileArg">
+                <stringProp name="File.path">C:\Users\mkamt\Documents\LOG8371\LOG8371-tp2\data\large_dataset.arff</stringProp>
+                <stringProp name="File.paramname">file</stringProp>
+                <stringProp name="File.mimetype">text/plain</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">Content-Disposition: form-data; name=&quot;printNewick&quot;&#xd;
+false&#xd;
+&#xd;
+Content-Disposition: form-data; name=&quot;numClusters&quot;&#xd;
+-1&#xd;
+&#xd;
+Content-Disposition: form-data; name=&quot;linkType&quot;&#xd;
+SINGLE&#xd;
+&#xd;
+Content-Disposition: form-data; name=&quot;distanceIsBranchLength&quot;&#xd;
+true&#xd;
+&#xd;
+Content-Disposition: form-data; name=&quot;distanceFunction&quot;&#xd;
+weka.core.EuclideanDistance</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain"></stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">/cluster/Hierarchical</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">true</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree/>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="SimpleKMeans" enabled="true">
+          <elementProp name="HTTPsampler.Files" elementType="HTTPFileArgs">
+            <collectionProp name="HTTPFileArgs.files">
+              <elementProp name="C:\Users\mkamt\Documents\LOG8371\LOG8371-tp2\data\large_dataset.arff" elementType="HTTPFileArg">
+                <stringProp name="File.path">C:\Users\mkamt\Documents\LOG8371\LOG8371-tp2\data\large_dataset.arff</stringProp>
+                <stringProp name="File.paramname">file</stringProp>
+                <stringProp name="File.mimetype">text/plain</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">Content-Disposition: form-data; name=&quot;canopyMaxNumCanopiesToHoldInMemory&quot;&#xd;
+2&#xd;
+&#xd;
+Content-Disposition: form-data; name=&quot;canopyMinimumCanopyDensity&quot;&#xd;
+1.0&#xd;
+&#xd;
+Content-Disposition: form-data; name=&quot;canopyPeriodicPruningRate&quot;&#xd;
+1.0&#xd;
+&#xd;
+Content-Disposition: form-data; name=&quot;canopyT1&quot;&#xd;
+1.0&#xd;
+&#xd;
+Content-Disposition: form-data; name=&quot;canopyT2&quot;&#xd;
+1.0&#xd;
+&#xd;
+Content-Disposition: form-data; name=&quot;displayStdDevs&quot;&#xd;
+true&#xd;
+&#xd;
+Content-Disposition: form-data; name=&quot;distanceFunction&quot;&#xd;
+weka.core.EuclideanDistance&#xd;
+&#xd;
+Content-Disposition: form-data; name=&quot;dontReplaceMissingValues&quot;&#xd;
+true&#xd;
+&#xd;
+Content-Disposition: form-data; name=&quot;fastDistanceCalc&quot;&#xd;
+true&#xd;
+&#xd;
+Content-Disposition: form-data; name=&quot;initializationMethod&quot;&#xd;
+0&#xd;
+&#xd;
+Content-Disposition: form-data; name=&quot;maxIterations&quot;&#xd;
+10&#xd;
+&#xd;
+Content-Disposition: form-data; name=&quot;numClusters&quot;&#xd;
+2&#xd;
+&#xd;
+Content-Disposition: form-data; name=&quot;numExecutionSlots&quot;&#xd;
+1&#xd;
+&#xd;
+Content-Disposition: form-data; name=&quot;preserveInstancesOrder&quot;&#xd;
+true&#xd;
+&#xd;
+Content-Disposition: form-data; name=&quot;reduceNumberOfDistanceCalcsViaCanopies&quot;&#xd;
+true&#xd;
+&#xd;
+Content-Disposition: form-data; name=&quot;seed&quot;&#xd;
+10</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain"></stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">/cluster/SimpleKMeans</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">true</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree/>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="EM" enabled="true">
+          <elementProp name="HTTPsampler.Files" elementType="HTTPFileArgs">
+            <collectionProp name="HTTPFileArgs.files">
+              <elementProp name="C:\Users\mkamt\Documents\LOG8371\LOG8371-tp2\data\large_dataset.arff" elementType="HTTPFileArg">
+                <stringProp name="File.path">C:\Users\mkamt\Documents\LOG8371\LOG8371-tp2\data\large_dataset.arff</stringProp>
+                <stringProp name="File.paramname">file</stringProp>
+                <stringProp name="File.mimetype">text/plain</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">Content-Disposition: form-data; name=&quot;numFolds&quot;&#xd;
+2&#xd;
+&#xd;
+Content-Disposition: form-data; name=&quot;numKMeansRuns&quot;&#xd;
+10&#xd;
+&#xd;
+Content-Disposition: form-data; name=&quot;maximumNumberOfClusters&quot;&#xd;
+-1&#xd;
+&#xd;
+Content-Disposition: form-data; name=&quot;numClusters&quot;&#xd;
+-1&#xd;
+&#xd;
+Content-Disposition: form-data; name=&quot;maxIterations&quot;&#xd;
+100</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain"></stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">/cluster/EM</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">true</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree/>
+      </hashTree>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Charge augmentée exceptionnelle" enabled="false">
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <stringProp name="LoopController.loops">1</stringProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">100</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">1</stringProp>
+        <boolProp name="ThreadGroup.scheduler">false</boolProp>
+        <stringProp name="ThreadGroup.duration"></stringProp>
+        <stringProp name="ThreadGroup.delay"></stringProp>
+      </ThreadGroup>
+      <hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="decisionStump" enabled="true">
+          <elementProp name="HTTPsampler.Files" elementType="HTTPFileArgs">
+            <collectionProp name="HTTPFileArgs.files">
+              <elementProp name="C:\Users\mkamt\Documents\LOG8371\LOG8371-tp2\data\large_dataset.arff" elementType="HTTPFileArg">
+                <stringProp name="File.path">C:\Users\mkamt\Documents\LOG8371\LOG8371-tp2\data\large_dataset.arff</stringProp>
+                <stringProp name="File.paramname">file</stringProp>
+                <stringProp name="File.mimetype">text/plain</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">Content-Disposition: form-data; name=&quot;batchSize&quot;&#xd;
+&#xd;
+100&#xd;
+&#xd;
+Content-Disposition: form-data; name=&quot;useKernelEstimator&quot;&#xd;
+&#xd;
+0&#xd;
+&#xd;
+Content-Disposition: form-data; name=&quot;useSupervisedDiscretization&quot;&#xd;
+&#xd;
+0&#xd;
+&#xd;
+Content-Disposition: form-data; name=&quot;validation&quot;&#xd;
+&#xd;
+CrossValidation&#xd;
+&#xd;
+Content-Disposition: form-data; name=&quot;validationNum&quot;&#xd;
+&#xd;
+10</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain"></stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">/algorithm/BayesNet</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">true</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree/>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="IBK" enabled="true">
+          <elementProp name="HTTPsampler.Files" elementType="HTTPFileArgs">
+            <collectionProp name="HTTPFileArgs.files">
+              <elementProp name="C:\Users\mkamt\Documents\LOG8371\LOG8371-tp2\data\large_dataset.arff" elementType="HTTPFileArg">
+                <stringProp name="File.path">C:\Users\mkamt\Documents\LOG8371\LOG8371-tp2\data\large_dataset.arff</stringProp>
+                <stringProp name="File.paramname">file</stringProp>
+                <stringProp name="File.mimetype">text/plain</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">Content-Disposition: form-data; name=&quot;windowSize&quot;&#xd;
+0&#xd;
+&#xd;
+Content-Disposition: form-data; name=&quot;KNN&quot;&#xd;
+0&#xd;
+&#xd;
+Content-Disposition: form-data; name=&quot;crossValidate&quot;&#xd;
+0&#xd;
+&#xd;
+Content-Disposition: form-data; name=&quot;distanceWeighting&quot;&#xd;
+0&#xd;
+&#xd;
+Content-Disposition: form-data; name=&quot;meanSquared&quot;&#xd;
+0&#xd;
+&#xd;
+Content-Disposition: form-data; name=&quot;nearestNeighbourSearchAlgorithm&quot;&#xd;
+weka.core.neighboursearch.LinearNNSearch&#xd;
+&#xd;
+Content-Disposition: form-data; name=&quot;validation&quot;&#xd;
+CrossValidation&#xd;
+&#xd;
+Content-Disposition: form-data; name=&quot;validationNum&quot;&#xd;
+10</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain"></stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">/algorithm/IBk</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">true</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree/>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="RandomForest" enabled="true">
+          <elementProp name="HTTPsampler.Files" elementType="HTTPFileArgs">
+            <collectionProp name="HTTPFileArgs.files">
+              <elementProp name="C:\Users\mkamt\Documents\LOG8371\LOG8371-tp2\data\large_dataset.arff" elementType="HTTPFileArg">
+                <stringProp name="File.path">C:\Users\mkamt\Documents\LOG8371\LOG8371-tp2\data\large_dataset.arff</stringProp>
+                <stringProp name="File.paramname">file</stringProp>
+                <stringProp name="File.mimetype">text/plain</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">Content-Disposition: form-data; name=&quot;storeOutOfBagPredictions&quot;&#xd;
+true&#xd;
+&#xd;
+Content-Disposition: form-data; name=&quot;numExecutionSlots&quot;&#xd;
+1&#xd;
+&#xd;
+Content-Disposition: form-data; name=&quot;bagSizePercent&quot;&#xd;
+10&#xd;
+&#xd;
+Content-Disposition: form-data; name=&quot;numDecimalPlaces&quot;&#xd;
+1&#xd;
+&#xd;
+Content-Disposition: form-data; name=&quot;batchSize&quot;&#xd;
+100&#xd;
+&#xd;
+Content-Disposition: form-data; name=&quot;printClassifiers&quot;&#xd;
+true&#xd;
+&#xd;
+Content-Disposition: form-data; name=&quot;numIterations&quot;&#xd;
+10&#xd;
+&#xd;
+Content-Disposition: form-data; name=&quot;outputOutOfBagComplexityStatistics&quot;&#xd;
+true&#xd;
+&#xd;
+Content-Disposition: form-data; name=&quot;breakTiesRandomly&quot;&#xd;
+true&#xd;
+&#xd;
+Content-Disposition: form-data; name=&quot;maxDepth&quot;&#xd;
+0&#xd;
+&#xd;
+Content-Disposition: form-data; name=&quot;computeAttributeImportance&quot;&#xd;
+true&#xd;
+&#xd;
+Content-Disposition: form-data; name=&quot;calcOutOfBag&quot;&#xd;
+true&#xd;
+&#xd;
+Content-Disposition: form-data; name=&quot;numFeatures&quot;&#xd;
+0&#xd;
+&#xd;
+Content-Disposition: form-data; name=&quot;validation&quot;&#xd;
+CrossValidation&#xd;
+&#xd;
+Content-Disposition: form-data; name=&quot;validationNum&quot;&#xd;
+10</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain"></stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">/algorithm/RandomForest</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">true</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree/>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Hierarchical" enabled="false">
+          <elementProp name="HTTPsampler.Files" elementType="HTTPFileArgs">
+            <collectionProp name="HTTPFileArgs.files">
+              <elementProp name="C:\Users\mkamt\Documents\LOG8371\LOG8371-tp2\data\large_dataset.arff" elementType="HTTPFileArg">
+                <stringProp name="File.path">C:\Users\mkamt\Documents\LOG8371\LOG8371-tp2\data\large_dataset.arff</stringProp>
+                <stringProp name="File.paramname">file</stringProp>
+                <stringProp name="File.mimetype">text/plain</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">Content-Disposition: form-data; name=&quot;printNewick&quot;&#xd;
+false&#xd;
+&#xd;
+Content-Disposition: form-data; name=&quot;numClusters&quot;&#xd;
+-1&#xd;
+&#xd;
+Content-Disposition: form-data; name=&quot;linkType&quot;&#xd;
+SINGLE&#xd;
+&#xd;
+Content-Disposition: form-data; name=&quot;distanceIsBranchLength&quot;&#xd;
+true&#xd;
+&#xd;
+Content-Disposition: form-data; name=&quot;distanceFunction&quot;&#xd;
+weka.core.EuclideanDistance</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain"></stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">/cluster/Hierarchical</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">true</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree/>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="SimpleKMeans" enabled="true">
+          <elementProp name="HTTPsampler.Files" elementType="HTTPFileArgs">
+            <collectionProp name="HTTPFileArgs.files">
+              <elementProp name="C:\Users\mkamt\Documents\LOG8371\LOG8371-tp2\data\large_dataset.arff" elementType="HTTPFileArg">
+                <stringProp name="File.path">C:\Users\mkamt\Documents\LOG8371\LOG8371-tp2\data\large_dataset.arff</stringProp>
+                <stringProp name="File.paramname">file</stringProp>
+                <stringProp name="File.mimetype">text/plain</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">Content-Disposition: form-data; name=&quot;canopyMaxNumCanopiesToHoldInMemory&quot;&#xd;
+2&#xd;
+&#xd;
+Content-Disposition: form-data; name=&quot;canopyMinimumCanopyDensity&quot;&#xd;
+1.0&#xd;
+&#xd;
+Content-Disposition: form-data; name=&quot;canopyPeriodicPruningRate&quot;&#xd;
+1.0&#xd;
+&#xd;
+Content-Disposition: form-data; name=&quot;canopyT1&quot;&#xd;
+1.0&#xd;
+&#xd;
+Content-Disposition: form-data; name=&quot;canopyT2&quot;&#xd;
+1.0&#xd;
+&#xd;
+Content-Disposition: form-data; name=&quot;displayStdDevs&quot;&#xd;
+true&#xd;
+&#xd;
+Content-Disposition: form-data; name=&quot;distanceFunction&quot;&#xd;
+weka.core.EuclideanDistance&#xd;
+&#xd;
+Content-Disposition: form-data; name=&quot;dontReplaceMissingValues&quot;&#xd;
+true&#xd;
+&#xd;
+Content-Disposition: form-data; name=&quot;fastDistanceCalc&quot;&#xd;
+true&#xd;
+&#xd;
+Content-Disposition: form-data; name=&quot;initializationMethod&quot;&#xd;
+0&#xd;
+&#xd;
+Content-Disposition: form-data; name=&quot;maxIterations&quot;&#xd;
+10&#xd;
+&#xd;
+Content-Disposition: form-data; name=&quot;numClusters&quot;&#xd;
+2&#xd;
+&#xd;
+Content-Disposition: form-data; name=&quot;numExecutionSlots&quot;&#xd;
+1&#xd;
+&#xd;
+Content-Disposition: form-data; name=&quot;preserveInstancesOrder&quot;&#xd;
+true&#xd;
+&#xd;
+Content-Disposition: form-data; name=&quot;reduceNumberOfDistanceCalcsViaCanopies&quot;&#xd;
+true&#xd;
+&#xd;
+Content-Disposition: form-data; name=&quot;seed&quot;&#xd;
+10</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain"></stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">/cluster/SimpleKMeans</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">true</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree/>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="EM" enabled="true">
+          <elementProp name="HTTPsampler.Files" elementType="HTTPFileArgs">
+            <collectionProp name="HTTPFileArgs.files">
+              <elementProp name="C:\Users\mkamt\Documents\LOG8371\LOG8371-tp2\data\large_dataset.arff" elementType="HTTPFileArg">
+                <stringProp name="File.path">C:\Users\mkamt\Documents\LOG8371\LOG8371-tp2\data\large_dataset.arff</stringProp>
+                <stringProp name="File.paramname">file</stringProp>
+                <stringProp name="File.mimetype">text/plain</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">Content-Disposition: form-data; name=&quot;numFolds&quot;&#xd;
+2&#xd;
+&#xd;
+Content-Disposition: form-data; name=&quot;numKMeansRuns&quot;&#xd;
+10&#xd;
+&#xd;
+Content-Disposition: form-data; name=&quot;maximumNumberOfClusters&quot;&#xd;
+-1&#xd;
+&#xd;
+Content-Disposition: form-data; name=&quot;numClusters&quot;&#xd;
+-1&#xd;
+&#xd;
+Content-Disposition: form-data; name=&quot;maxIterations&quot;&#xd;
+100</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain"></stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">/cluster/EM</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">true</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree/>
+      </hashTree>
+      <ResultCollector guiclass="TableVisualizer" testclass="ResultCollector" testname="View Results in Table" enabled="true">
+        <boolProp name="ResultCollector.error_logging">false</boolProp>
+        <objProp>
+          <name>saveConfig</name>
+          <value class="SampleSaveConfiguration">
+            <time>true</time>
+            <latency>true</latency>
+            <timestamp>true</timestamp>
+            <success>true</success>
+            <label>true</label>
+            <code>true</code>
+            <message>true</message>
+            <threadName>true</threadName>
+            <dataType>true</dataType>
+            <encoding>false</encoding>
+            <assertions>true</assertions>
+            <subresults>true</subresults>
+            <responseData>false</responseData>
+            <samplerData>false</samplerData>
+            <xml>true</xml>
+            <fieldNames>false</fieldNames>
+            <responseHeaders>false</responseHeaders>
+            <requestHeaders>false</requestHeaders>
+            <responseDataOnError>false</responseDataOnError>
+            <saveAssertionResultsFailureMessage>false</saveAssertionResultsFailureMessage>
+            <assertionsResultsToSave>0</assertionsResultsToSave>
+            <bytes>true</bytes>
+          </value>
+        </objProp>
+        <stringProp name="filename">~/CSVSample.jtl</stringProp>
+      </ResultCollector>
+      <hashTree/>
+      <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
+        <boolProp name="ResultCollector.error_logging">false</boolProp>
+        <objProp>
+          <name>saveConfig</name>
+          <value class="SampleSaveConfiguration">
+            <time>true</time>
+            <latency>true</latency>
+            <timestamp>true</timestamp>
+            <success>true</success>
+            <label>true</label>
+            <code>true</code>
+            <message>true</message>
+            <threadName>true</threadName>
+            <dataType>true</dataType>
+            <encoding>false</encoding>
+            <assertions>true</assertions>
+            <subresults>true</subresults>
+            <responseData>false</responseData>
+            <samplerData>false</samplerData>
+            <xml>true</xml>
+            <fieldNames>false</fieldNames>
+            <responseHeaders>false</responseHeaders>
+            <requestHeaders>false</requestHeaders>
+            <responseDataOnError>false</responseDataOnError>
+            <saveAssertionResultsFailureMessage>false</saveAssertionResultsFailureMessage>
+            <assertionsResultsToSave>0</assertionsResultsToSave>
+            <bytes>true</bytes>
+          </value>
+        </objProp>
+        <stringProp name="filename"></stringProp>
+      </ResultCollector>
+      <hashTree/>
+    </hashTree>
+  </hashTree>
+</jmeterTestPlan>

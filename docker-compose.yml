@@ -1,0 +1,24 @@
+version: '3'
+services:
+  mongo:
+    image: mongo
+    container_name: jguwekamongo
+    restart: always
+  jguweka:
+    image: weka/jguweka:OAS3
+    container_name: jguwekarest
+    restart: always
+    links:
+      - "mongo:mongodb"
+    ports:
+      - "8080:8080"
+      - "8081:8081"
+      - "8849:8849"
+    depends_on:
+      - mongo
+    labels:
+      - "service-name:jguweka"
+      - "service-type:app-srv"
+      - "environment:test"
+    environment:
+      CATALINA_OPTS: "-agentpath:/usr/local/jprofiler10.1.5/bin/linux-x64/libjprofilerti.so=port=8849"
